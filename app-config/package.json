@@ -4,7 +4,7 @@
   "description": "A simple Node.js app to demonstrate config maps and secrets",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "APP_MSG=Hello && node app.js"
   },
   "author": "Red Hat Training",
   "license": "ASL",
