@@ -1,0 +1,5 @@
+#!/bin/bash -e
+
+if [ "$(ls -A /tmp/src)" ]; then
+  mv /tmp/src/* /usr/share/nginx/html/
+fi
