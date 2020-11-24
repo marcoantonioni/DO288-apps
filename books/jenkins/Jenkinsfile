@@ -25,8 +25,9 @@ pipeline {
         stage('NPM Install') {
             steps {
                 echo '### Installing NPM dependencies ###'
+                echo 'ho tolto il nexus server --> npm config set registry ${NEXUS_SERVER}'
                 sh '''
-                        npm config set registry ${NEXUS_SERVER}
+                        
                         cd books
                         npm install
                    '''
