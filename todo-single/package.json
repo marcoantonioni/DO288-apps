@@ -11,6 +11,6 @@
   "dependencies": {
     "restify": "4.3.0",
     "sequelize": "3.14.2",
-    "mysql": ">=8.0.0"
+    "mysql": ">=3"
   }
 }
