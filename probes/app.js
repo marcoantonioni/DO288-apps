@@ -45,6 +45,12 @@ route.get('/healthz', function(req, res) {
     }
 });
 
+// A route that returns startup status
+route.get('/startup', function(req, res) {
+    console.log('ping /startup => pong [OK]');
+    res.send('OK\n');
+});
+
 // This route handles switching the state of the app
 route.route('/flip').get(function(req, res) {
 
