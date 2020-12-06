@@ -1,4 +1,4 @@
-FROM ubi8/nodejs-14
+FROM nodejs:12
 USER 0
 ADD app-src /tmp/src
 RUN chown -R 1001:0 /tmp/src
