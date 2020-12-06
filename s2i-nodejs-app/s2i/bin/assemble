@@ -1,0 +1,2 @@
+echo "---> Building application from source..."
+npm install
