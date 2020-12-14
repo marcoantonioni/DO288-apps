@@ -14,7 +14,7 @@ ENV DOCROOT=/var/www/html \
 COPY ./s2i/bin/* ${S2IBIN}/
 COPY ./${SRC}/* ${DOCROOT}/
 
-RUN yum install -y httpd \
+RUN yum install -y net-tools httpd \
     && yum clean all \
     && chgrp -R 0 ${LOGS} \
     && chmod -R 777 /run/httpd/ ${LOGS} ${CFG} \
