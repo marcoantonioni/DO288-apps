@@ -24,7 +24,7 @@ RUN yum install -y net-tools httpd \
     && chmod -R g=u ${DOCROOT} \
     && chmod +x ${S2IBIN}/assemble ${S2IBIN}/run
 
-RUN sed -i 's/80;/${PORT};/g' ${CFG} \
+RUN sed -i 's/80/${PORT}/g' ${CFG} \
     && cat ${CFG}
 
 EXPOSE ${PORT}
