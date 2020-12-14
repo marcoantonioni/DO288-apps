@@ -31,7 +31,7 @@ USER ${USER}
 
 ENV LogLevel "info"
 
-CMD ["\${S2IBIN}/run"]
+CMD ["/usr/libexec/s2i/bin/run"]
 
 # ENTRYPOINT ["/usr/sbin/httpd"]
 # CMD ["-D", "FOREGROUND"]
