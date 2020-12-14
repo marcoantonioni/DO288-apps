@@ -22,7 +22,7 @@ RUN yum install -y httpd \
     && chown -R ${USER}:${USER} ${DOCROOT} \
     && chgrp -R 0 ${DOCROOT} \
     && chmod -R g=u ${DOCROOT} \
-    && chmod +x /usr/libexec/s2i/assemble /usr/libexec/s2i/run
+    && chmod +x /usr/libexec/s2i/bin/assemble /usr/libexec/s2i/bin/run
 
 EXPOSE ${PORT}
 
