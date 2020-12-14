@@ -27,4 +27,5 @@ ENV LogLevel "info"
 COPY ./s2i/bin/* /usr/libexec/s2i/bin/
 COPY ./${SRC}/* ${DOCROOT}/
 
-CMD ["/usr/libexec/s2i/run"]
+# CMD ["/usr/libexec/s2i/run"]
+CMD ["sleep infinity"]
