@@ -1,4 +1,4 @@
-FROM ubi8/ubi:8.2
+FROM registry.access.redhat.com/ubi8/ubi:8.2
 
 # Apache HTTP Server image.
 #
