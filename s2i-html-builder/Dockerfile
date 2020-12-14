@@ -49,7 +49,8 @@ ENV HTTPD_CONTAINER_SCRIPTS_PATH=/usr/share/container-scripts/httpd/ \
     HTTPD_VAR_RUN=/var/run/httpd \
     HTTPD_DATA_PATH=/var/www \
     HTTPD_DATA_ORIG_PATH=/var/www \
-    HTTPD_LOG_PATH=/var/log/httpd
+    HTTPD_LOG_PATH=/var/log/httpd \
+    PATH=${PATH}:/usr/libexec/s2i/bin/:/usr/bin:/usr/local/bin
 
 COPY ./s2i/bin/* /usr/libexec/s2i/bin/
 COPY ./root /
@@ -68,4 +69,4 @@ USER 1001
 # VOLUME ["${HTTPD_LOG_PATH}"]
 
 # CMD ["/usr/libexec/s2i/run"]
-CMD ["sleep infinity"]
+CMD ["/usr/bin/sleep infinity"]
