@@ -27,8 +27,11 @@ ENV LogLevel "info"
 COPY ./s2i/bin/* /usr/libexec/s2i/bin/
 COPY ./${SRC}/* ${DOCROOT}/
 
-# CMD ["/usr/libexec/s2i/run"]
+RUN chmod -x /usr/libexec/s2i/bin/* \
+    chmod -R 777 ${DOCROOT}/
 
-ENTRYPOINT ["/usr/sbin/httpd"]
+CMD ["/usr/libexec/s2i/run"]
 
-CMD ["-D", "FOREGROUND"]
+# ENTRYPOINT ["/usr/sbin/httpd"]
+
+# CMD ["-D", "FOREGROUND"]
