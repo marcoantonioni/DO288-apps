@@ -4,5 +4,4 @@ export HTTPD_RUN_BY_S2I=1
 
 echo -e "\n\n***********\n+++++ STEP BUILDER: [EXECUTE: RUN] EXEC APP (exec httpd -DFOREGROUND)\n***********\n\n"
 
-# exec /usr/sbin/httpd -DFOREGROUND
-exec sleep infinity
+exec /usr/sbin/httpd -DFOREGROUND
