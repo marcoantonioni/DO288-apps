@@ -19,8 +19,10 @@ RUN yum install -y httpd \
     && chmod -R 777 /run/httpd/ ${LOGS} ${CFG} \
     && sed -i 's/Listen [0-9]*/Listen ${PORT}/g' ${CFG} \
     && echo ${BASE_MSG} > ${DOCROOT}/index.html \
-    && chmod +x /usr/libexec/s2i/bin/* \
-    && chmod -R 777 ${DOCROOT}/
+    && chown -R ${USER}:${USER} ${DOCROOT} && \
+    && chgrp -R 0 ${DOCROOT} && \
+    && chmod -R g=u ${DOCROOT} && \
+    && chmod +x /usr/libexec/s2i/assemble /usr/libexec/s2i/run
 
 EXPOSE ${PORT}
 
@@ -28,8 +30,7 @@ USER ${USER}
 
 ENV LogLevel "info"
 
-# CMD ["/usr/libexec/s2i/run"]
+CMD ["/usr/libexec/s2i/run"]
 
-ENTRYPOINT ["/usr/sbin/httpd"]
-
-CMD ["-D", "FOREGROUND"]
+# ENTRYPOINT ["/usr/sbin/httpd"]
+# CMD ["-D", "FOREGROUND"]
