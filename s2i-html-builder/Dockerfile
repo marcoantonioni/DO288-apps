@@ -27,8 +27,8 @@ ENV LogLevel "info"
 COPY ./s2i/bin/* /usr/libexec/s2i/bin/
 COPY ./${SRC}/* ${DOCROOT}/
 
-RUN chmod -x /usr/libexec/s2i/bin/* \
-    chmod -R 777 ${DOCROOT}/
+RUN chmod +x /usr/libexec/s2i/bin/* \
+    && chmod -R 777 ${DOCROOT}/
 
 CMD ["/usr/libexec/s2i/run"]
 
