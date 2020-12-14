@@ -31,7 +31,7 @@ USER ${USER}
 
 ENV LogLevel "info"
 
-CMD ["${S2IBIN}/run"]
+CMD ["\${S2IBIN}/run"]
 
 # ENTRYPOINT ["/usr/sbin/httpd"]
 # CMD ["-D", "FOREGROUND"]
