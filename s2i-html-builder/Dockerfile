@@ -28,4 +28,7 @@ COPY ./s2i/bin/* /usr/libexec/s2i/bin/
 COPY ./${SRC}/* ${DOCROOT}/
 
 # CMD ["/usr/libexec/s2i/run"]
-CMD ["sleep infinity"]
+
+ENTRYPOINT ["/usr/sbin/httpd"]
+
+CMD ["-D", "FOREGROUND"]
