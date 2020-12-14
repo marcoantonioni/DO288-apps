@@ -17,13 +17,15 @@ COPY ./${SRC}/* ${DOCROOT}/
 RUN yum install -y net-tools httpd \
     && yum clean all \
     && chgrp -R 0 ${LOGS} \
-    && chmod -R 777 /run/httpd/ ${LOGS} ${CFG} \
-    && sed -i 's/80;/${PORT};/g' ${CFG} \
+    && chmod -R 777 /run/httpd/ ${LOGS} ${CFG} \    
     && echo ${BASE_MSG} > ${DOCROOT}/index.html \
     && chown -R ${USER}:${USER} ${DOCROOT} \
     && chgrp -R 0 ${DOCROOT} \
     && chmod -R g=u ${DOCROOT} \
     && chmod +x ${S2IBIN}/assemble ${S2IBIN}/run
+
+RUN sed -i 's/80;/${PORT};/g' ${CFG} \
+    && cat ${CFG}
 
 EXPOSE ${PORT}
 
