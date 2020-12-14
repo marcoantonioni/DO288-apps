@@ -54,10 +54,6 @@ ENV HTTPD_CONTAINER_SCRIPTS_PATH=/usr/share/container-scripts/httpd/ \
 COPY ./s2i/bin/* /usr/libexec/s2i/bin/
 COPY ./root /
 
-RUN ls -al /usr/libexec/s2i/bin/
-RUN cat /usr/libexec/s2i/bin/assemble
-RUN cat /usr/libexec/s2i/bin/run
-
 RUN mkdir -p ${HTTPD_CONTAINER_SCRIPTS_PATH} \
     && mkdir -p ${HTTPD_CONFIGURATION_PATH} \
     && mkdir -p ${HTTPD_TLS_CERT_PATH} \
