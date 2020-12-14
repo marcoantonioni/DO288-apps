@@ -28,8 +28,8 @@ USER ${USER}
 
 ENV LogLevel "info"
 
-CMD ["/usr/libexec/s2i/run"]
+# CMD ["/usr/libexec/s2i/run"]
 
-# ENTRYPOINT ["/usr/sbin/httpd"]
+ENTRYPOINT ["/usr/sbin/httpd"]
 
-# CMD ["-D", "FOREGROUND"]
+CMD ["-D", "FOREGROUND"]
