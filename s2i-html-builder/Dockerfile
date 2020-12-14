@@ -55,7 +55,7 @@ COPY ./s2i/bin /usr/libexec/s2i
 COPY ./root /
 
 # Reset permissions of filesystem to default values
-RUN /usr/libexec/httpd-prepare && rpm-file-permissions
+# RUN /usr/libexec/httpd-prepare && rpm-file-permissions
 
 USER 1001
 
