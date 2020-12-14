@@ -10,25 +10,23 @@ ENV DOCROOT=/var/www/html \
     USER=1001 \
     BASE_MSG="Hello from base image, if you see this message you are missing an index.html in your src folder."
     
+COPY ./s2i/bin/* /usr/libexec/s2i/bin/
+COPY ./${SRC}/* ${DOCROOT}/
 
 RUN yum install -y httpd \
     && yum clean all \
     && chgrp -R 0 ${LOGS} \
     && chmod -R 777 /run/httpd/ ${LOGS} ${CFG} \
     && sed -i 's/Listen [0-9]*/Listen ${PORT}/g' ${CFG} \
-    && echo ${BASE_MSG} > ${DOCROOT}/index.html
+    && echo ${BASE_MSG} > ${DOCROOT}/index.html \
+    && chmod +x /usr/libexec/s2i/bin/* \
+    && chmod -R 777 ${DOCROOT}/
 
 EXPOSE ${PORT}
 
 USER ${USER}
 
 ENV LogLevel "info"
-
-COPY ./s2i/bin/* /usr/libexec/s2i/bin/
-COPY ./${SRC}/* ${DOCROOT}/
-
-RUN chmod +x /usr/libexec/s2i/bin/* \
-    && chmod -R 777 ${DOCROOT}/
 
 CMD ["/usr/libexec/s2i/run"]
 
