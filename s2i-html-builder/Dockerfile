@@ -69,4 +69,4 @@ USER 1001
 # VOLUME ["${HTTPD_LOG_PATH}"]
 
 # CMD ["/usr/libexec/s2i/run"]
-CMD ["/usr/bin/sleep infinity"]
+CMD ["sleep infinity"]
