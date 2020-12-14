@@ -1,4 +1,4 @@
-FROM ubi8/s2i-core:1
+FROM ubi8/ubi:8.2
 
 # Apache HTTP Server image.
 #
