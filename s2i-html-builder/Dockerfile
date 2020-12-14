@@ -19,9 +19,9 @@ RUN yum install -y httpd \
     && chmod -R 777 /run/httpd/ ${LOGS} ${CFG} \
     && sed -i 's/Listen [0-9]*/Listen ${PORT}/g' ${CFG} \
     && echo ${BASE_MSG} > ${DOCROOT}/index.html \
-    && chown -R ${USER}:${USER} ${DOCROOT} && \
-    && chgrp -R 0 ${DOCROOT} && \
-    && chmod -R g=u ${DOCROOT} && \
+    && chown -R ${USER}:${USER} ${DOCROOT} \
+    && chgrp -R 0 ${DOCROOT} \
+    && chmod -R g=u ${DOCROOT} \
     && chmod +x /usr/libexec/s2i/assemble /usr/libexec/s2i/run
 
 EXPOSE ${PORT}
