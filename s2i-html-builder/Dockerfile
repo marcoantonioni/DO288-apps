@@ -54,8 +54,10 @@ ENV HTTPD_CONTAINER_SCRIPTS_PATH=/usr/share/container-scripts/httpd/ \
 COPY ./s2i/bin/* /usr/libexec/s2i/bin/
 COPY ./root /
 
-# Reset permissions of filesystem to default values
-RUN chmod +x /usr/libexec/s2i/bin/* \
+RUN mkdir -p ${HTTPD_CONTAINER_SCRIPTS_PATH} \
+    && mkdir -p ${HTTPD_CONFIGURATION_PATH} \
+    && mkdir -p ${HTTPD_TLS_CERT_PATH} \
+    && chmod +x /usr/libexec/s2i/bin/* \
     && chown -R 1001:0 ${HTTPD_CONTAINER_SCRIPTS_PATH} ${HTTPD_APP_ROOT} ${HTTPD_CONFIGURATION_PATH} ${HTTPD_MAIN_CONF_PATH} ${HTTPD_MAIN_CONF_MODULES_D_PATH} ${HTTPD_MAIN_CONF_D_PATH} ${HTTPD_TLS_CERT_PATH} ${HTTPD_VAR_RUN} ${HTTPD_DATA_PATH} ${HTTPD_DATA_ORIG_PATH} ${HTTPD_LOG_PATH}
 
 USER 1001
