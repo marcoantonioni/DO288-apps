@@ -1,4 +1,5 @@
-FROM ubi8/s2i-base
+# FROM ubi8/s2i-base
+FROM test-s2i-base/s2i-base
 
 EXPOSE 8080
 
