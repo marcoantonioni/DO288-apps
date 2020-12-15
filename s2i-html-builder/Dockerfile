@@ -33,5 +33,3 @@ ENV LogLevel "info"
 
 CMD ["/usr/libexec/s2i/bin/run"]
 
-# ENTRYPOINT ["/usr/sbin/httpd"]
-# CMD ["-D", "FOREGROUND"]
