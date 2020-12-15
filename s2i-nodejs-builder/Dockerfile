@@ -62,7 +62,9 @@ COPY ./root/ /
 
 # Drop the root user and make the content of /opt/app-root owned by user 1001
 RUN chown -R 1001:0 ${APP_ROOT} && chmod -R ug+rwx ${APP_ROOT} && \
-    rpm-file-permissions
+    rpm-file-permissions && \
+    chown -R 1001:0 $STI_SCRIPTS_PATH && \
+    chmod +x $STI_SCRIPTS_PATH/*
 
 USER 1001
 
