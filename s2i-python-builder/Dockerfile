@@ -57,7 +57,9 @@ RUN \
     python3.8 -m venv ${APP_ROOT} && \
     chown -R 1001:0 ${APP_ROOT} && \
     fix-permissions ${APP_ROOT} -P && \
-    rpm-file-permissions
+    rpm-file-permissions \
+    chown -R 1001:0 $STI_SCRIPTS_PATH && \
+    chmod +x $STI_SCRIPTS_PATH/*
 
 USER 1001
 
