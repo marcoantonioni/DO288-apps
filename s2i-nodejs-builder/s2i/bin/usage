@@ -13,3 +13,6 @@ s2i build https://github.com/sclorg/s2i-nodejs-container.git --context-dir=14/te
 You can then run the resulting image via:
 podman run -p 8080:8080 nodejs-sample-app
 EOF
+
+# to avoid crash loop
+sleep infinity
