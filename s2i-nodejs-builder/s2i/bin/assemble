@@ -5,6 +5,8 @@
 # application folder.
 [ -d "/usr/src/app" ] && exit 0
 
+echo -e "\n\n******** Starting assemble script by Marco *******\n\n"
+
 set -e
 
 # FIXME: Linking of global modules is disabled for now as it causes npm failures
@@ -33,6 +35,8 @@ if [ -d /tmp/artifacts ] && [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
 fi
 
 echo "---> Installing application source ..."
+ls -al /tmp/src
+
 mv /tmp/src/* ./
 
 # Fix source directory permissions
