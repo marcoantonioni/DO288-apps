@@ -9,4 +9,5 @@ COPY ./root/* /tmp/src/
 
 RUN echo -e "\n\n Running static site assembling\n\n" \
     && ls -al /tmp/src/ \
+    && cat /tmp/src/index.html \
     && /usr/libexec/s2i/bin/assemble
