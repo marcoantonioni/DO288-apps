@@ -46,7 +46,7 @@ LABEL summary="$SUMMARY" \
       help="For more information visit https://github.com/sclorg/s2i-nodejs-container" \
       usage="s2i build <SOURCE-REPOSITORY> ubi8/$NAME-$NODEJS_VERSION:latest <APP-NAME>"
 
-RUN yum module reset nodejs:$NODEJS_PREV_VERSION && yum -y module enable nodejs:$NODEJS_VERSION && \
+RUN yum -y module reset nodejs:$NODEJS_PREV_VERSION && yum -y module enable nodejs:$NODEJS_VERSION && \
     MODULE_DEPS="make gcc gcc-c++ libatomic_ops" && \
     INSTALL_PKGS="$MODULE_DEPS nodejs npm nodejs-nodemon nss_wrapper" && \
     ln -s /usr/lib/node_modules/nodemon/bin/nodemon.js /usr/bin/nodemon && \
