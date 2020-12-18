@@ -38,9 +38,10 @@ echo "---> Installing application source ..."
 
 echo -e "\n\n******** Lista sorgenti in /tmp/src *******\n\n"
 
-ls -al /tmp/src
+ls -al /tmp/src/upload/src
 
-mv /tmp/src/* ./
+# IMPORTANTE quando sorgenti non in root progetto git
+mv /tmp/src/upload/src/* ./
 
 echo -e "\n\n******** Lista sorgenti in ./ dopo la move *******\n\n"
 ls -al ./
