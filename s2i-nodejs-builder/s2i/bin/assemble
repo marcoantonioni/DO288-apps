@@ -35,9 +35,17 @@ if [ -d /tmp/artifacts ] && [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
 fi
 
 echo "---> Installing application source ..."
+
+echo -e "\n\n******** Lista sorgenti in /tmp/src *******\n\n"
+
 ls -al /tmp/src
 
 mv /tmp/src/* ./
+
+echo -e "\n\n******** Lista sorgenti in ./ dopo la move *******\n\n"
+ls -al ./
+
+echo -e "\n\n********Prosegue con fix permissions *******\n\n"
 
 # Fix source directory permissions
 fix-permissions ./
