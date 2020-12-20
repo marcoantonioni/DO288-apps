@@ -1,5 +1,4 @@
-# FROM ubi8/s2i-core:1
-FROM test-s2i-base/s2i-base
+FROM test-template-nodejs-builder/s2i-base
 
 # This image provides a Node.JS environment you can use to run your Node.JS
 # applications.
