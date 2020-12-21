@@ -1,5 +1,5 @@
+# il nome NS non serve perchè esegue prima ricerca in progetto locale
 FROM the-builder:v1
-# FROM test-images-from-registry/the-builder
 
 RUN echo -e "\n\n****** copy files in /temp/src ******\n\n"
 COPY upload/src/* /tmp/src/
