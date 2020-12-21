@@ -13,11 +13,8 @@ RUN chown -R 1001:0 /tmp/src/
 RUN ls -al /tmp/src/upload/src/
 USER 1001
 
-RUN ls -al /usr/libexec/s2i/bin
-
 RUN echo -e "\n\n****** running assemble from Dockerfile in s2i-nodejs-application ******\n\n"
 
-RUN cat /usr/libexec/s2i/bin/assemble
 RUN /usr/libexec/s2i/bin/assemble
 
-CMD ["node /opt/app-root/src"]
+CMD ["node"]
