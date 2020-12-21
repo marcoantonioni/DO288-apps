@@ -67,7 +67,7 @@ RUN chown -R 1001:0 ${APP_ROOT} && chmod -R ug+rwx ${APP_ROOT} && \
     rpm-file-permissions && \
     chown -R 1001:0 $STI_SCRIPTS_PATH && \
     chmod +x $STI_SCRIPTS_PATH/* && \
-    chmod +x $STI_SCRIPTS_PATH/bin/* \
+    chmod +x $STI_SCRIPTS_PATH/bin/*
 
 USER 1001
 
