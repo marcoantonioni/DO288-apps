@@ -6,9 +6,12 @@ COPY upload/src/* /tmp/src/
 RUN ls -al /tmp/src
 
 # MISMATCH immagine build
+USER 0
 RUN mkdir -p /tmp/src/upload/src/
 COPY upload/src/* /tmp/src/upload/src/
+RUN chown -R 1001:0 /tmp/src/
 RUN ls -al /tmp/src/upload/src/
+USER 1001
 
 RUN ls -al /usr/libexec/s2i/bin
 
