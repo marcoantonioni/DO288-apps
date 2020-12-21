@@ -20,5 +20,4 @@ RUN echo -e "\n\n****** running assemble from Dockerfile in s2i-nodejs-applicati
 RUN cat /usr/libexec/s2i/bin/assemble
 RUN /usr/libexec/s2i/bin/assemble
 
-# RUN cat /usr/libexec/s2i/bin/run
-# RUN /usr/libexec/s2i/bin/run
+CMD ["node /opt/app-root/src"]
