@@ -1,4 +1,5 @@
-FROM s2i-nodejs-builder/s2i-nodejs-builder
+FROM the-builder
+# FROM test-images-from-registry/the-builder
 
 RUN echo -e "\n\n****** copy files in /temp/src ******\n\n"
 COPY upload/src/* /tmp/src/
