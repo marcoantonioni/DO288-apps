@@ -55,7 +55,7 @@ RUN yum -y module reset nodejs:$NODEJS_PREV_VERSION && yum -y module enable node
     yum -y clean all --enablerepo='*'
 
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH
-COPY ./s2i/bin/ $STI_SCRIPTS_PATH
+COPY ./s2i/bin/ $STI_SCRIPTS_PATH/bin
 
 # Copy extra files to the image.
 COPY ./root/ /
@@ -64,9 +64,9 @@ COPY ./root/ /
 RUN chown -R 1001:0 ${APP_ROOT} && chmod -R ug+rwx ${APP_ROOT} && \
     rpm-file-permissions && \
     chown -R 1001:0 $STI_SCRIPTS_PATH && \
-    chmod +x $STI_SCRIPTS_PATH/*
+    chmod +x $STI_SCRIPTS_PATH/bin/*
 
 USER 1001
 
 # Set the default CMD to print the usage of the language image
-CMD $STI_SCRIPTS_PATH/usage
+CMD $STI_SCRIPTS_PATH/bin/usage
