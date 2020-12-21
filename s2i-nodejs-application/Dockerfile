@@ -3,9 +3,12 @@ FROM the-builder:v1
 
 RUN echo -e "\n\n****** copy files in /temp/src ******\n\n"
 COPY upload/src/* /tmp/src/
-# MISMATCH immagine build
-COPY upload/src/* /tmp/src/upload/src/
 RUN ls -al /tmp/src
+
+# MISMATCH immagine build
+RUN mkdir -p /tmp/src/upload/src/
+COPY upload/src/* /tmp/src/upload/src/
+RUN ls -al /tmp/src/upload/src/
 
 RUN ls -al /usr/libexec/s2i/bin
 
