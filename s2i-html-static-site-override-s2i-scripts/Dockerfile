@@ -8,7 +8,7 @@ RUN echo -e "\n\n***********\n+++++ STEP from Dockerfile in project 's2i-html-st
 # copy static site files in /tmp/src/
 COPY ./root/* /tmp/src/
 
-# override scripts
+# override s2i scripts
 COPY ./s2i/bin /usr/libexec/s2i/bin
 
 RUN echo -e "\n\n***********\n+++++ STEP from Dockerfile in project 's2i-html-static-site-override-s2i-scripts': Executing 'assemble' script overriding builder image (/usr/libexec/s2i/bin/assemble)\n***********\n\n" \
