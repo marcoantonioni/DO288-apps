@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo -e "\n\n***********\n+++++ STEP BUILDER: [EXECUTE: ASSEMBLE OVERRIDE] Installing application source (cp -Rf /tmp/src/* /var/www/html/)\n***********\n\n"
+cp -Rf /tmp/src/* /var/www/html/
+
+echo -e "\n\n***********\n+++++ STEP BUILDER: [EXECUTE: ASSEMBLE OVERRIDE] List httpd root (ls -al /var/www/html/)\n***********\n\n"
+ls -al /var/www/html/
