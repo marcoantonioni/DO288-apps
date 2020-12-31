@@ -1,2 +1,0 @@
-#!/bin/bash -e
-/usr/sbin/nginx -g "daemon off;"
