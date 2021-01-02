@@ -2,8 +2,13 @@
 
 echo "Performing the S2I build..."
 
+echo -e "\n\n    *** running 'todo-backend' assemble script (1)"
+
 #TODO: add call to the standard S2I assemble script
+echo -e "\n\n    *** calling /usr/libexec/s2i/assemble script"
 /usr/libexec/s2i/assemble
+
+echo -e "\n\n    *** running 'todo-backend' assemble script (2)"
 
 rc=$?
 
