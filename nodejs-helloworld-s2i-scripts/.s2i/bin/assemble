@@ -28,9 +28,9 @@ echo -e "\n\n   *** back to 'assemble' script from .s2i/bin folder of 'nodejs-he
 echo -e "\n\n   *** test result code for call to '/usr/libexec/s2i/assemble' ***\n\n"
 
 if [ $rc -eq 0 ]; then
-    echo "The S2I build completed successfully."
+    echo -e "\n\n   *** OK The S2I build completed successfully."
 else
-    echo "The S2I build failed !!!"
+    echo -e "\n\n   *** KO The S2I build failed !!!"
 fi
 
 # exit with result code from inner build
