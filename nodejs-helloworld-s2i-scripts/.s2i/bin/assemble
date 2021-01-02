@@ -5,8 +5,8 @@ echo -e "\n\n   *** list files in folder /tmp/scripts"
 ls -al /tmp/scripts
 echo -e "\n\n   *** list files in folder /tmp/src"
 ls -al /tmp/src
-echo -e "\n\n   *** print content of file /tmp/src/file1.txt"
-cat /tmp/src/file1.txt
+echo -e "\n\n   *** print content of file /tmp/src/app.js"
+cat /tmp/src/app.js
 echo -e "\n\n"
 
 echo -e "\n\n   ... calling '/usr/libexec/s2i/assemble' from builder image ...\n\n"
