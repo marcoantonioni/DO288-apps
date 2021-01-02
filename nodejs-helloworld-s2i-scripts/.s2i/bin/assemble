@@ -3,8 +3,10 @@ echo -e "\n\n   *** running 'assemble' script from .s2i/bin folder of 'nodejs-he
 
 echo -e "\n\n   *** list files in folder /tmp/scripts"
 ls -al /tmp/scripts
-echo -e "\n\n   *** print content of file /tmp/scripts/file1.txt"
-cat /tmp/scripts/file1.txt
+echo -e "\n\n   *** list files in folder /tmp/src"
+ls -al /tmp/src
+echo -e "\n\n   *** print content of file /tmp/src/file1.txt"
+cat /tmp/src/file1.txt
 echo -e "\n\n"
 
 echo -e "\n\n   ... calling '/usr/libexec/s2i/assemble' from builder image ...\n\n"
