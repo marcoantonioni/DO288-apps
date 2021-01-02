@@ -18,7 +18,7 @@ echo -e "\n\n   *** list files in folder /tmp/src"
 ls -al /tmp/src
 echo -e "\n\n"
 
-echo -e "\n\n   ... calling '/usr/libexec/s2i/assemble' from builder image ...\n\n"
+echo -e "\n\n   *** calling '/usr/libexec/s2i/assemble' from builder image ***\n\n"
 /usr/libexec/s2i/assemble
 
 rc=$?
@@ -28,9 +28,9 @@ echo -e "\n\n   *** back to 'assemble' script from .s2i/bin folder of 'nodejs-he
 echo -e "\n\n   *** test result code for call to '/usr/libexec/s2i/assemble' ***\n\n"
 
 if [ $rc -eq 0 ]; then
-    echo -e "\n\n   *** OK The S2I build completed successfully."
+    echo -e "\n\n   *** OK The S2I build completed successfully. ***\n\n"
 else
-    echo -e "\n\n   *** KO The S2I build failed !!!"
+    echo -e "\n\n   *** KO The S2I build failed !!! ***\n\n"
 fi
 
 # exit with result code from inner build
