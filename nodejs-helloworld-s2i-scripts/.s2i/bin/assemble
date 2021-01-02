@@ -1,0 +1,5 @@
+#!/bin/bash
+echo -e "\n\n   *** running 'assemble' script from .s2i/bin folder of 'nodejs-helloworld-s2i-scripts' project ***\n\n"
+echo -e "\n\n   ... calling '/usr/libexec/s2i/assemble' from builder image ...\n\n"
+/usr/libexec/s2i/assemble
+echo -e "\n\n   *** back to 'assemble' script from .s2i/bin folder of 'nodejs-helloworld-s2i-scripts' project ***\n\n"
