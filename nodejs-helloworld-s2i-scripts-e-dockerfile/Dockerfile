@@ -9,13 +9,14 @@ WORKDIR $APP_ROOT
 ## BEGIN customization
 
 # imposta utenza root
-USER 0
+# test USER 0
+RUN echo "sono in esecuzione come utente: "$(whoami)
 
 # copia sorgenti da folder repo git in folder definito da immagine builder 
 COPY src $SRC
 
 # assegna ownership gruppo root
-RUN chgrp -R 0 $SRC
+# test RUN chgrp -R 0 $SRC
 
 # test presenza files
 RUN pwd && ls -al . && ls -al $SRC && ls -al $STI_SCRIPTS_PATH
