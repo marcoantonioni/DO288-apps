@@ -12,13 +12,12 @@ WORKDIR $APP_ROOT
 USER 0
 
 # copia sorgenti da folder repo git in folder definito da immagine builder 
-COPY src $SRC
+COPY src/* $SRC/*
 
 # esegue script assemblaggio presente in immagine builder
 RUN $STI_SCRIPTS_PATH/assemble
 
-RUN ls -al $HOME && ls -al $APP_ROOT && echo "======> runfolder: "$(pwd) && echo "======> APP_ROOT: "$APP_ROOT && echo "======> HOME: "$HOME
-RUN echo "=====> file assemble" && cat $STI_SCRIPTS_PATH/assemble
+RUN ls -al $HOME && ls -al $APP_ROOT && ls -al $APP_ROOT/src && echo "======> runfolder: "$(pwd) && echo "======> APP_ROOT: "$APP_ROOT && echo "======> HOME: "$HOME
 
 # espone porta
 EXPOSE $PORT
