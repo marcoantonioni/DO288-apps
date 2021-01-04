@@ -9,6 +9,7 @@ WORKDIR $APP_ROOT
 ## BEGIN customization
 
 COPY src $SRC
+RUN chgrp -R 0 $SRC
 
 RUN pwd && ls -al . && ls -al $SRC && ls -al $STI_SCRIPTS_PATH
 
