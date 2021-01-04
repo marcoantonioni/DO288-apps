@@ -9,7 +9,7 @@ WORKDIR $APP_ROOT
 ## BEGIN customization
 
 # imposta utenza root
-# test USER 0
+USER 0
 RUN echo "sono in esecuzione come utente: "$(whoami)
 
 # copia sorgenti da folder repo git in folder definito da immagine builder 
