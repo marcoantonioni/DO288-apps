@@ -17,7 +17,7 @@ COPY src $SRC
 # esegue script assemblaggio presente in immagine builder
 RUN $STI_SCRIPTS_PATH/assemble
 
-RUN ls -al $HOME && ls -al $APP_ROOT && echo "======> runfolder: "$(pwd) && echo "======> APP_ROOT: "$APP_ROOT && echo "======> APP_ROOT: "$HOME
+RUN ls -al $HOME && ls -al $APP_ROOT && echo "======> runfolder: "$(pwd) && echo "======> APP_ROOT: "$APP_ROOT && echo "======> HOME: "$HOME
 RUN echo "=====> file assemble" && cat $STI_SCRIPTS_PATH/assemble
 
 # espone porta
