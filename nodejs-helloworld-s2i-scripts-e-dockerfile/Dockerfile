@@ -8,15 +8,25 @@ WORKDIR $APP_ROOT
 
 ## BEGIN customization
 
+# imposta utenza root
 USER 0
+
+# copia sorgenti da folder repo git in folder definito da immagine builder 
 COPY src $SRC
+
+# assegna ownership gruppo root
 RUN chgrp -R 0 $SRC
 
+# test presenza files
 RUN pwd && ls -al . && ls -al $SRC && ls -al $STI_SCRIPTS_PATH
 
+# esegue script assemblaggio presente in immagine builder
 RUN $STI_SCRIPTS_PATH/assemble
 
+# espone porta
 EXPOSE $PORT
+
+# imposta utenza esecuzione applicazione
 USER $USER
 
 ## END customization
