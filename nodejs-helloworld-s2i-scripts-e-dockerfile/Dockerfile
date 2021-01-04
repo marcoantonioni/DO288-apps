@@ -1,15 +1,21 @@
 FROM openshift/nodejs:12-ubi8
 
-ENV USER=1001
+ENV USER=1001 \
+    PORT=8080 \
+    SRC=/tmp/src
+    
 WORKDIR $APP_ROOT
 
 ## BEGIN customization
 
-COPY src .
+COPY src $SRC
 
-RUN pwd && ls -al . && ls -al $STI_SCRIPTS_PATH
+RUN pwd && ls -al . && ls -al $SRC && ls -al $STI_SCRIPTS_PATH
 
 ## END customization
+
+EXPOSE $PORT
+USER $USER
 
 RUN $STI_SCRIPTS_PATH/assemble
 
