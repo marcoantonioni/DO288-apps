@@ -13,8 +13,8 @@ USER 0
 
 # copia sorgenti da folder repo git in folder definito da immagine builder 
 
-# debug visivo
-RUN echo -e "\n\n======> lista files in /tmp" && ls -al /tmp
+## debug visivo
+# RUN echo -e "\n\n======> lista files in /tmp" && ls -al /tmp
 
 ## opzione 1 (copia del folder 'src' e suoi contenuti nel folder '/tmp', il folder target $SRC ['/tmp/src'] non esiste prima della copia)
 COPY src $SRC
@@ -23,15 +23,15 @@ COPY src $SRC
 # RUN mkdir -p $SRC 
 # COPY src/* $SRC
 
-# debug visivo
-RUN ls -al $SRC
+## debug visivo
+# RUN ls -al $SRC
 
 # esegue script assemblaggio presente in immagine builder
 RUN $STI_SCRIPTS_PATH/assemble
 
-# debug visivo
-RUN echo -e "\n\n======> runfolder (pwd): "$(pwd) && echo "======> folder APP_ROOT: "$APP_ROOT && echo "======> folder HOME: "$HOME
-RUN echo -e "\n\n======> lista files in "$HOME && ls -al $HOME && echo "======> lista files in "$APP_ROOT && ls -al $APP_ROOT && echo "======> lista files in "$APP_ROOT"/src" && ls -al $APP_ROOT/src 
+## debug visivo
+# RUN echo -e "\n\n======> runfolder (pwd): "$(pwd) && echo "======> folder APP_ROOT: "$APP_ROOT && echo "======> folder HOME: "$HOME
+# RUN echo -e "\n\n======> lista files in "$HOME && ls -al $HOME && echo "======> lista files in "$APP_ROOT && ls -al $APP_ROOT && echo "======> lista files in "$APP_ROOT"/src" && ls -al $APP_ROOT/src 
 
 # espone porta
 EXPOSE $PORT
