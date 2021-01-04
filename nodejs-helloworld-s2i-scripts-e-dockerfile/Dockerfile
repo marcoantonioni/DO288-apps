@@ -12,7 +12,8 @@ WORKDIR $APP_ROOT
 USER 0
 
 # copia sorgenti da folder repo git in folder definito da immagine builder 
-COPY src/* $SRC/*
+RUN mkdir -p $SRC 
+COPY src/* $SRC
 
 RUN ls -al $SRC
 
