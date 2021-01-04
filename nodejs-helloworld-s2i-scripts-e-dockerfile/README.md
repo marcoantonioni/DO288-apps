@@ -1,1 +1,1 @@
-# Esempio con scripts s2i e Dockerfile (usare nodejs builder standard)
+# Esempio di build con Dockerfile (usare nodejs builder standard)
