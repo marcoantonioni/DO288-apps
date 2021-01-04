@@ -1,2 +1,0 @@
-#!/bin/bash
-echo -e "\n\n\n======> in esecuzione il file 'assemble' custom della applicazione, utile per aggiungere operazioni non previste nel file 'assemble' del builder\n\n"
