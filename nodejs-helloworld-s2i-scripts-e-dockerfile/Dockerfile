@@ -8,16 +8,17 @@ WORKDIR $APP_ROOT
 
 ## BEGIN customization
 
+USER 0
 COPY src $SRC
 RUN chgrp -R 0 $SRC
 
 RUN pwd && ls -al . && ls -al $SRC && ls -al $STI_SCRIPTS_PATH
 
-## END customization
+RUN $STI_SCRIPTS_PATH/assemble
 
 EXPOSE $PORT
 USER $USER
 
-RUN $STI_SCRIPTS_PATH/assemble
+## END customization
 
 CMD $STI_SCRIPTS_PATH/run
