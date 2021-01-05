@@ -40,6 +40,8 @@ EXPOSE $PORT
 # imposta utenza esecuzione applicazione
 USER $USER
 
+WORKDIR $HOME
+
 #======= END customization
 
 CMD $STI_SCRIPTS_PATH/run
