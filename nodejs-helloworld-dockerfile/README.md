@@ -1,1 +1,3 @@
-# Esempio di build con Dockerfile (usare nodejs builder standard 'openshift/nodejs')
+# Esempio di build con Dockerfile 
+
+usare nodejs builder standard 'openshift/nodejs'
