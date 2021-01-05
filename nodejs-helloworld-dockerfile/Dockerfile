@@ -28,7 +28,7 @@ COPY src $SRC
 # RUN ls -al $SRC
 
 # cambia ownership al folder sorgenti
-RUN chown -R 1001:0 $SRC
+RUN chown -R $USER:0 $SRC
 
 # imposta utenza esecuzione applicazione
 USER $USER
