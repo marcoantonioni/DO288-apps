@@ -17,12 +17,12 @@ USER 0
 ## debug visivo
 # RUN echo -e "\n\n======> lista files in /tmp" && ls -al /tmp
 
-## opzione 1 (copia del folder 'src' e suoi contenuti nel folder '/tmp', il folder target $SRC ['/tmp/src'] non esiste prima della copia)
-COPY src $SRC
+## opzione 1 (copia del folder '.' e suoi contenuti nel folder '/tmp', il folder target $SRC ['/tmp/src'] non esiste prima della copia)
+COPY . $SRC
 
-## opzione 2 (crea il folder $SRC ['/tmp/src'] manualmente e poi copia il contenuto del folder 'src' all'interno di $SRC)
+## opzione 2 (crea il folder $SRC ['/tmp/src'] manualmente e poi copia il contenuto del folder '.' all'interno di $SRC)
 # RUN mkdir -p $SRC 
-# COPY src/* $SRC
+# COPY ./* $SRC
 
 ## debug visivo
 # RUN ls -al $SRC
