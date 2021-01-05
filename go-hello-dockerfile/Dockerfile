@@ -3,7 +3,7 @@ FROM openshift/golang:1.13.4-ubi8
 # utenza non root per sicurezza Openshift, folder sorgenti come da specifiche del builder 'golang:1.13.4-ubi8'
 ENV USER=1001 \
     PORT=8080 \
-    SRC=/tmp/src
+    SRC=/tmp/srcx
     
 WORKDIR $APP_ROOT
 
