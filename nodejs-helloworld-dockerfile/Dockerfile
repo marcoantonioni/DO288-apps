@@ -1,6 +1,6 @@
 FROM openshift/nodejs:12-ubi8
 
-# utenza non root per sicurezza Openshift, folder sorgenti come da specifiche del builder 'nodejs:12-ubi8'
+# utenza non root per sicurezza Openshift, folder sorgenti '/tmp/src' come da specifiche S2I
 ENV USER=1001 \
     PORT=8080 \
     SRC=/tmp/src
