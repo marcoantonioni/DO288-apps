@@ -25,6 +25,9 @@ COPY ./src/* $SRC
 ## debug visivo
 # RUN ls -al $SRC
 
+RUN chown -R $USER:0 $SRC
+USER $USER
+
 # esegue script assemblaggio presente in immagine builder
 RUN $STI_SCRIPTS_PATH/assemble
 
@@ -34,9 +37,6 @@ RUN $STI_SCRIPTS_PATH/assemble
 
 # espone porta
 EXPOSE $PORT
-
-# imposta utenza esecuzione applicazione
-USER $USER
 
 #======= END customization
 
