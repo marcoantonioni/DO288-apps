@@ -5,7 +5,7 @@ ENV USER=1001 \
     PORT=8080 \
     SRC=/tmp/src
     
-WORKDIR $APP_ROOT
+WORKDIR $HOME
 
 #======= BEGIN customization
 
