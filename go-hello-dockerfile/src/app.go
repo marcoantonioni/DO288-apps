@@ -21,9 +21,9 @@ func rootHandler(response http.ResponseWriter, request *http.Request) {
 
     switch *lang {
       case "en":
-        fmt.Fprintf(response, "Hello %s!. Welcome from GO in git repo 'go-hello-dockerfile' !\n", request.URL.Path[1:])
+        fmt.Fprintf(response, "Hello %s ! Welcome from GO in git repo 'go-hello-dockerfile' !\n", request.URL.Path[1:])
       case "es":
-        fmt.Fprintf(response, "Hola %s!. Bienvenido desde GO en git repo !\n", request.URL.Path[1:])
+        fmt.Fprintf(response, "Hola %s ! Bienvenido desde GO en git repo !\n", request.URL.Path[1:])
       default:
         fmt.Fprintf(response, "Error! unknown lang option -> %s\n", *lang)
   }
