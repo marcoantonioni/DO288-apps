@@ -40,7 +40,7 @@ EXPOSE $PORT
 # imposta utenza esecuzione applicazione
 USER $USER
 
-WORKDIR $HOME
+WORKDIR $APP_ROOT
 
 #======= END customization
 
