@@ -25,7 +25,10 @@ COPY ./src/* $SRC
 ## debug visivo
 # RUN ls -al $SRC
 
+# cambia ownership al folder sorgenti
 RUN chown -R $USER:0 $SRC
+
+# imposta utenza esecuzione applicazione
 USER $USER
 
 # esegue script assemblaggio presente in immagine builder
