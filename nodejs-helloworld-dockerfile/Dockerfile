@@ -5,7 +5,8 @@ ENV USER=1001 \
     PORT=8080 \
     SRC=/tmp/src
     
-WORKDIR $APP_ROOT
+# WORKDIR $APP_ROOT
+WORKDIR $HOME
 
 #======= BEGIN customization
 
@@ -27,6 +28,10 @@ COPY src $SRC
 ## debug visivo
 # RUN ls -al $SRC
 
+# modificato
+RUN chown -R 1001:0 $SRC
+USER $USER
+
 # esegue script assemblaggio presente in immagine builder
 RUN $STI_SCRIPTS_PATH/assemble
 
@@ -38,7 +43,7 @@ RUN $STI_SCRIPTS_PATH/assemble
 EXPOSE $PORT
 
 # imposta utenza esecuzione applicazione
-USER $USER
+# USER $USER
 
 #======= END customization
 
