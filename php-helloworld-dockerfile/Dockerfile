@@ -4,7 +4,8 @@ FROM openshift/php:7.3-ubi8
 ENV USER=1001 \
     PORT=8080 \
     SRC=/tmp/src
-    
+
+# imposta folder di lavoro (PHP)
 WORKDIR $HOME
 
 #======= BEGIN customization
@@ -17,13 +18,9 @@ USER 0
 ## debug visivo
 # RUN echo -e "\n\n======> lista files in /tmp" && ls -al /tmp
 
-## opzione 1 (copia del folder 'src' e suoi contenuti nel folder '/tmp', il folder target $SRC ['/tmp/src'] non esiste prima della copia)
+## crea il folder target $SRC ['/tmp/src'] e copia da folder sorgenti i contenuti)
 RUN mkdir -p $SRC
 COPY ./src/* $SRC
-
-## opzione 2 (crea il folder $SRC ['/tmp/src'] manualmente e poi copia il contenuto del folder 'src' all'interno di $SRC)
-# RUN mkdir -p $SRC 
-# COPY src/* $SRC
 
 ## debug visivo
 # RUN ls -al $SRC
