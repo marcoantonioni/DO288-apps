@@ -1,5 +1,5 @@
 #----------------------------------------------------------------------------------------------------
-# Modificare contenuti di questo Dockerfile con vari dockerfile presenti nel folder
+# Modificare contenuti di questo Dockerfile con vari dockerfile presenti nel folder 'dockerfiles'
 #----------------------------------------------------------------------------------------------------
 
 FROM xyzam-nodejs-builder:v1
