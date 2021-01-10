@@ -2,23 +2,36 @@
 # Modificare contenuti di questo Dockerfile con vari dockerfile presenti nel folder 'dockerfiles'
 #----------------------------------------------------------------------------------------------------
 
+# usa builder custom
 FROM xyzam-nodejs-builder:v1
 
 # utenza non root per sicurezza Openshift, folder sorgenti '/tmp/src' come da specifiche S2I
 ENV USER=1001 \
     PORT=8080 \
     SRC=/tmp/src
-    
+
 WORKDIR $HOME
 
+# imposta utenza root per operazioni folder/copia/ownership
 USER 0
+
+# prepara path per folder richiesto da builder custom
 RUN mkdir -p $SRC/upload/src
+
+# copia sorgenti
 COPY src/* $SRC/upload/src/
+
+# cambia ownership
 RUN chown -R $USER:0 $SRC && ls -al $SRC/upload/src/
+
+# imposta utenza
 USER $USER
 
+# avvia assemblaggio
 RUN $STI_SCRIPTS_PATH/assemble
 
+# espone porta
 EXPOSE $PORT
 
+# imposta comando esecuzione server
 CMD $STI_SCRIPTS_PATH/run
