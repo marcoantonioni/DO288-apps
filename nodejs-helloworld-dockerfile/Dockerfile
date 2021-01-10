@@ -12,9 +12,9 @@ ENV USER=1001 \
 WORKDIR $HOME
 
 USER 0
-RUN mkdir -p $SRC/upload
-COPY src $SRC/upload
-RUN chown -R $USER:0 $SRC/upload
+RUN mkdir -p $SRC/upload/src
+COPY src/* $SRC/upload/src/
+RUN chown -R $USER:0 $SRC && ls -al $SRC/upload/src/
 USER $USER
 
 RUN $STI_SCRIPTS_PATH/assemble
