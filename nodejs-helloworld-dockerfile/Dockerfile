@@ -13,7 +13,7 @@ WORKDIR $HOME
 
 USER 0
 COPY src $SRC
-RUN chown -r $USER:0 $SRC
+RUN chown -R $USER:0 $SRC
 USER $USER
 
 RUN $STI_SCRIPTS_PATH/assemble
