@@ -12,6 +12,7 @@ ENV USER=1001 \
 WORKDIR $HOME
 
 USER 0
+RUN mkdir -p $SRC/upload
 COPY src $SRC
 RUN chown -R $USER:0 $SRC/upload
 USER $USER
