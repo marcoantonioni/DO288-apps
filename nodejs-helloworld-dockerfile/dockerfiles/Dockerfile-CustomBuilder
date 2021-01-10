@@ -1,0 +1,19 @@
+FROM xyzam-nodejs-builder:v1
+
+# utenza non root per sicurezza Openshift, folder sorgenti '/tmp/src' come da specifiche S2I
+ENV USER=1001 \
+    PORT=8080 \
+    SRC=/tmp/src
+    
+WORKDIR $HOME
+
+USER 0
+COPY src $SRC
+RUN chown -r $USER:0 $SRC
+USER $USER
+
+RUN $STI_SCRIPTS_PATH/assemble
+
+EXPOSE $PORT
+
+CMD $STI_SCRIPTS_PATH/run
