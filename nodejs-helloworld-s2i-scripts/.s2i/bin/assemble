@@ -2,7 +2,7 @@
 echo -e "\n\n   *** running 'assemble' script from .s2i/bin folder of 'nodejs-helloworld-s2i-scripts' project ***\n\n"
 
 # crea file html
-echo "My file !!!" > ./my-file.html
+echo "My file !!!" > /tmp/src/my-file.html
 
 echo -e "\n\n   *** list files in folder /tmp/scripts"
 ls -al /tmp/scripts
