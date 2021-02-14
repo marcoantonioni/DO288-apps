@@ -3,6 +3,7 @@ echo -e "\n\n   *** running 'assemble' script from .s2i/bin folder of 'nodejs-he
 
 # crea file html
 echo "My file !!!" > /tmp/src/my-file.html
+echo "My file2" > /tmp/src/my-file2.html
 
 echo -e "\n\n   *** list files in folder /tmp/scripts"
 ls -al /tmp/scripts
