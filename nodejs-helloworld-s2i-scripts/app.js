@@ -11,6 +11,11 @@ app.get('/my-file', function (req, res) {
   fs.createReadStream('my-file.html').pipe(res)
 });
 
+app.get('/my-file2', function (req, res) {
+  res.writeHead(200, { 'content-type': 'text/html' })
+  fs.createReadStream('my-file2.html').pipe(res)
+});
+
 app.listen(8080, function () {
   console.log('Example app listening on port 8080!');
 });
